@@ -4,7 +4,7 @@
 class Scene
 {
 public:
-	//Constructor and destructor
+	//Constructor and destructor.,
 	Scene();
 	~Scene();
 
@@ -14,8 +14,8 @@ public:
 private:
 	Triangle *triangles;	//pointer to array of all the triangles in the scene
 	Vertex *vertices; 
-	unsigned int numTriangles = 24;	//number of triangles in the scene
-	unsigned int numVertices = 14;	//number of vertices in the scene
+	const unsigned int numTriangles = 24;	//number of triangles in the scene
+	const unsigned int numVertices = 14;	//number of vertices in the scene
 };
 
 //Create the scene
@@ -82,4 +82,5 @@ Scene::Scene()
 Scene::~Scene()
 {
 	delete[] triangles;
+	delete[] vertices;
 }
