@@ -9,7 +9,7 @@ public:
 	~Scene();
 
 	//Methods
-	Vertex& intersect(const Ray &arg);	//Calculates the interection between the scene and Ray arg
+	void intersect(const Ray &arg) const;	//Calculates the interection between the scene and Ray arg
 
 private:
 	Triangle *triangles;	//pointer to array of all the triangles in the scene

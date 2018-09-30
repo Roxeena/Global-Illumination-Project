@@ -1,103 +1,87 @@
-#define VECTOR3D_H
-#include <cstddef>
+#include <cstddef>;
 
-
-template<typename T>
-class vector3d
+class Vector3D
 {
 private:
-	T X;
-	T Y;
-	T Z;
+	float X;
+	float Y;
+	float Z;
 
 public:
+	//Constructors and destructors
 	//! Sets all members to zero
-	vector3d();
+	Vector3D();
 
-	//! Explicitly converts from one type to another
-	template<typename R>
-	explicit vector3d(const vector3d<R>& other);
+	Vector3D(const float& x, const float& y, const float& z);
 
-	vector3d(const T& x, const T& y, const T& z);
+	Vector3D(const float coords[3]);
 
-	vector3d(const T coords[3]);
+	Vector3D(const Vertex in);
 
 	// Get-Set methods
+	const float& getX() const;
+	void setX(const float& newX);
 
-	const T& getX() const;
-	void setX(const T& newX);
+	const float& getY() const;
+	void setY(const float& newY);
 
-	const T& getY() const;
-	void setY(const T& newY);
+	const float& getZ() const;
+	void setZ(const float& newZ);
 
-	const T& getZ() const;
-	void setZ(const T& newZ);
+	void getv(float buffer[3]) const;
+	void setv(const float coords[3]);
 
-	void getv(T buffer[3]) const;
-	void setv(const T coords[3]);
-
-	void get(T& x, T& y, T& z) const;
-	void set(const T& x, const T& y, const T& z);
+	void get(float& x, float& y, float& z) const;
+	void set(const float& x, const float& y, const float& z);
 
 	// Interface for indexing
-
-	const T& operator[] (size_t index) const;
-	T& operator[] (size_t index);
+	const float& operator[] (size_t index) const;
+	float& operator[] (size_t index);
 
 	//! Considering vectors as matrices with one row
-	const T& operator() (size_t column) const;
-	T& operator() (size_t column);
+	const float& operator() (size_t column) const;
+	float& operator() (size_t column);
 
 	// Standard operations
-
 	//! This does absolutely nothing, but it should be included for consistency
-	const vector3d operator+ () const;
+	const Vector3D operator+ () const;
 
-	const vector3d operator+ (const vector3d& other) const;
-	vector3d& operator+= (const vector3d& other);
+	const Vector3D operator+ (const Vector3D& other) const;
+	Vector3D& operator+= (const Vector3D& other);
 
 	//! The same as multiplying *this by -1
-	const vector3d operator- () const;
+	const Vector3D operator- () const;
 
-	const vector3d operator- (const vector3d& other) const;
-	vector3d& operator-= (const vector3d& other);
+	const Vector3D operator- (const Vector3D& other) const;
+	Vector3D& operator-= (const Vector3D& other);
 
 	//! Multiplying *this by a scalar
-	const vector3d operator* (const T& scalar) const;
-	vector3d& operator*= (const T& scalar);
+	const Vector3D operator* (const float& scalar) const;
+	Vector3D& operator*= (const float& scalar);
 
 	//! Same as multiplication by 1/scalar, maybe more accurate but also slower
-	const vector3d operator/ (const T& scalar) const;
-	vector3d& operator/= (const T& scalar);
+	const Vector3D operator/ (const float& scalar) const;
+	Vector3D& operator/= (const float& scalar);
 
 	//! Calculate the dot/inner/scalar product
-	const T operator* (const vector3d& other) const;
+	const float operator* (const Vector3D& other) const;
 
 	//! Calculate the cross/outer/vector product
-	const vector3d operator% (const vector3d& other) const;
-	vector3d& operator%= (const vector3d& other);
+	const Vector3D operator% (const Vector3D& other) const;
+	Vector3D& operator%= (const Vector3D& other);
 
 	// Auxiliary methods
-
 	//! Returns the squared length of *this
-	const T getSqrLen() const;
+	const float getSqrLen() const;
 	//! Returns the length of *this
-	const T getLen() const;
+	const float getLen() const;
 
 	//! Returns a vector with the same orientation, but with a length of 1
-	const vector3d getUnit() const;
+	const Vector3D getUnit() const;
 
 	//! Interpolates *this between another vector, by a ratio
-	const vector3d getInterpolation(const vector3d& other, const T& ratio) const;
+	const Vector3D getInterpolation(const Vector3D& other, const float& ratio) const;
 
 	//! Reflects *this according to a surface's normal
-	const vector3d getReflection(const vector3d& surfaceNormal) const;
-
-	//! Rotates *this about an origin, using Euler angles( X=pitch, Y=yaw, Z=roll)
-	const vector3d getRotationEuler(const vector3d& angles,
-		const vector3d& origin = vector3d(), bool degs = true) const;
-
-	//! Rotates *this about an origin, using an arbitrary axis( axis should be a unit vector )
-	const vector3d getRotationArbAxis(const vector3d& axis, const T& amount,
-		const vector3d& origin = vector3d(), bool degs = true) const;
+	const Vector3D getReflection(const Vector3D& surfaceNormal) const;
 };

@@ -13,5 +13,5 @@ public:
 private:
 	ColorDbl pixelColor;	//Color of the pixel
 	Ray *pixelRays;			//The rays that flow through this pixel
-	unsigned int numRays = 1;	//How many rays that flow through this pixel
+	const unsigned int numRays = 1;	//How many rays that flow through this pixel
 };

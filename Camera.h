@@ -9,9 +9,9 @@ public:
 	~Camera();
 
 	//Methods
-	void render() const;
+	void render();	//Fill the pixles array with information
 	void switchPosition();
-	void createImage();
+	void createImage() const;	//Convert the info in pixles to a image
 
 private:
 	Vertex pos1, pos2;

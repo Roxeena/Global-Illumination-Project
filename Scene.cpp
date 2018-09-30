@@ -1,4 +1,4 @@
-#include "Scene.h"
+#include "Scene.h";
 #include "Triangle.h";
 #include "Ray.h";
 
@@ -63,8 +63,20 @@ Scene::Scene()
 
 }
 
+
 Scene::~Scene()
 {
 	delete[] triangles;
 	delete[] vertices;
+}
+
+
+//Calculates the interection between the scene and Ray arg
+void Scene::intersect(const Ray &arg) const
+{
+	for (int i = 0; i < numTriangles; ++i)
+	{
+		if (triangles[i].RayIntersectsTriangle(arg))
+			std::cout << "Collision with triangle: " << i << std::endl;
+	}
 }
