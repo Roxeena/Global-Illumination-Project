@@ -15,25 +15,3 @@ private:
 	Ray *pixelRays;			//The rays that flow through this pixel
 	unsigned int numRays = 1;	//How many rays that flow through this pixel
 };
-
-Pixel::Pixel()
-	: pixelColor(ColorDbl())
-{
-}
-
-Pixel::Pixel(const double red, const double blue, const double green)
-	: pixelColor(ColorDbl(red, green, blue))
-{
-
-}
-
-Pixel::Pixel(const ColorDbl color)
-	: pixelColor(color)
-{
-
-}
-
-Pixel::~Pixel()
-{
-	delete[] pixelRays;
-}
