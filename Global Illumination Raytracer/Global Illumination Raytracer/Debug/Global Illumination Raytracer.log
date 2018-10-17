@@ -1,0 +1,43 @@
+﻿  Triangle.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(14): error C2061: syntax error: identifier 'Triangle'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C2143: syntax error: missing ';' before '*'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C2238: unexpected token(s) preceding ';'
+  Scene.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(14): error C2061: syntax error: identifier 'Triangle'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C2143: syntax error: missing ';' before '*'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(22): error C2238: unexpected token(s) preceding ';'
+  Ray.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C2143: syntax error: missing ',' before '&'
+  Pixel.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C2143: syntax error: missing ',' before '&'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(6): error C2512: 'Ray': no appropriate default constructor available
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(13): error C2512: 'Ray': no appropriate default constructor available
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(20): error C2065: 'inStart': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(20): error C2275: 'Vertex': illegal use of this type as an expression
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\vertex.h(4): note: see declaration of 'Vertex'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(20): error C2065: 'inEnd': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(20): error C2059: syntax error: 'const'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(22): error C2143: syntax error: missing ';' before '{'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(26): error C2572: 'Ray::setRay': redefinition of default argument: parameter 1
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\ray.h(13): note: see declaration of 'Ray::setRay'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(27): error C2601: 'Ray::setRay': local function definitions are illegal
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(19): note: this line contains a '{' which has not yet been matched
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(34): error C2601: 'Ray::setTarget': local function definitions are illegal
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(19): note: this line contains a '{' which has not yet been matched
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(40): error C2601: 'Ray::setRayColor': local function definitions are illegal
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(19): note: this line contains a '{' which has not yet been matched
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(46): error C2601: 'Ray::getStart': local function definitions are illegal
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(19): note: this line contains a '{' which has not yet been matched
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(50): error C2601: 'Ray::getEnd': local function definitions are illegal
+  c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(19): note: this line contains a '{' which has not yet been matched
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(52): error C2512: 'Ray': no appropriate default constructor available
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(47): error C2143: syntax error: missing ';' before ':'
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\pixel.cpp(47): error C2059: syntax error: ':'
+  Camera.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elmqpc\documents\github\global-illumination-project\global illumination raytracer\global illumination raytracer\triangle.h(16): error C2143: syntax error: missing ',' before '&'
+  Generating Code...
