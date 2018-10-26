@@ -1,8 +1,5 @@
 #include "Triangle.h"
-#include "Vertex.h"
-#include "ColorDbl.h"
-#include "Direction.h"
-#include "Vector3D.h"
+#include "Vector.h"
 
 
 Triangle::Triangle()
@@ -10,10 +7,12 @@ Triangle::Triangle()
 {
 }
 
+
 Triangle::Triangle(Vertex *inA, Vertex *inB, Vertex *inC, Direction &inNormal, const ColorDbl &color)
 	: vertexA(inA), vertexB(inB), vertexC(inC), normal(inNormal), trangleColor(color)
 {
 }
+
 
 void Triangle::setTriangle(Vertex *inA, Vertex *inB, Vertex *inC, const Direction &inNormal, const ColorDbl &color)
 {
@@ -24,35 +23,34 @@ void Triangle::setTriangle(Vertex *inA, Vertex *inB, Vertex *inC, const Directio
 	trangleColor = color;
 }
 
-Vertex* Triangle::getVertexA() const
-{
+
+Vertex* Triangle::getVertexA() const{
 	return vertexA;
 }
 
-Vertex* Triangle::getVertexB() const
-{
+Vertex* Triangle::getVertexB() const{
 	return vertexB;
 }
 
-Vertex* Triangle::getVertexC() const
-{
+Vertex* Triangle::getVertexC() const{
 	return vertexC;
 }
 
 
 //Based on code from:
 //https://en.wikipedia.org/wiki/M%C3%B6ller%E2%80%93Trumbore_intersection_algorithm
-bool Triangle::RayIntersectsTriangle(Ray arg) const
+bool Triangle::RayIntersectsTriangle(Ray &arg) 
 {
-	const float EPSILON = 0.0000001;
+	//TODO: Adjust for our code
+	const float EPSILON = 0.0000001f;
 	//Trodde att vertex0 = vertexA i Triangle
-	Vector3D vertex0 = Vector3D(vertexA);
-	Vector3D vertex1 = Vector3D(vertexB);
-	Vector3D vertex2 = Vector3D(vertexC);
-	Vector3D rayOrigin = Vector3D(arg.getStart());
-	Vector3D rayEnd = Vector3D(arg.getEnd());
-	Vector3D rayVector = rayEnd - rayOrgin;
-	Vector3D edge1, edge2, h, s, q;
+	Vector vertex0 = vertexA;
+	Vector vertex1 = vertexB;
+	Vector vertex2 = vertexC;
+	Vector rayOrigin = arg.getStart();
+	Vector rayEnd = Vector(arg.getEnd());
+	Vector rayVector = rayEnd - rayOrigin;
+	Vector edge1, edge2, h, s, q;
 	float a, f, u, v;
 	edge1 = vertex1 - vertex0;
 	edge2 = vertex2 - vertex0;
@@ -70,22 +68,23 @@ bool Triangle::RayIntersectsTriangle(Ray arg) const
 		return false;
 
 	q = s % edge1;
-	v = f * rayVector * q;
+	v = rayVector * q * f;
 
 	if (v < 0.0 || u + v > 1.0)
 		return false;
 
 	// At this stage we can compute t to find out where the intersection point is on the line.
-	float t = f * edge2 * q;
+	float t = edge2 * q * f;
 	if (t > EPSILON) // ray intersection
 	{
-		outIntersectionPoint = rayOrigin + rayVector * t;
+		Vertex outIntersectionPoint = Vertex(rayOrigin + rayVector * t);
 		arg.setTarget(this, outIntersectionPoint);
 		return true;
 	}
 	else // This means that there is a line intersection but not a ray intersection.
 		return false;
 }
+
 
 Triangle::~Triangle()
 {

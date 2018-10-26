@@ -5,17 +5,20 @@ Vertex::Vertex()
 {
 }
 
-Vertex::Vertex(const float inX, const float inY, const float inZ, const float inW = 1)
+
+Vertex::Vertex(const Vector in)
+	: x(in.getX()), y(in.getY()), z(in.getZ())
+{
+}
+
+
+Vertex::Vertex(const float inX, const float inY, const float inZ, const float inW)
 	: x(inX), y(inY), z(inZ), w(inW)
 {
 }
 
-Vertex::Vertex(const Vector3D in)
-	: x(in.getX()), y(in.getY()), z(in.getZ), w(1.0)
-{
-}
 
-void  Vertex::setVertex(const float inX, const float inY, const float inZ, const float inW = 1)
+void Vertex::setVertex(const float inX, const float inY, const float inZ, const float inW)
 {
 	x = inX;
 	y = inY;
@@ -23,10 +26,12 @@ void  Vertex::setVertex(const float inX, const float inY, const float inZ, const
 	w = inW;
 }
 
-float Vertex::getX() const {return x;}
-float Vertex::getY() const {return y;}
-float Vertex::getZ() const {return z;}
-float Vertex::getW() const {return w;}
+
+float Vertex::getX() const { return x; }
+float Vertex::getY() const { return y; }
+float Vertex::getZ() const { return z; }
+float Vertex::getW() const { return w; }
+
 
 Vertex::~Vertex()
 {

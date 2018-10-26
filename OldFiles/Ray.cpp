@@ -1,16 +1,16 @@
 #include "Ray.h"
-#include "Vertex.h"
-#include "Triangle.h"
-#include "ColorDbl.h"
 
+Ray::Ray()
+	: start(nullptr), end(nullptr), endTriangle(nullptr), rayColor(ColorDbl()), intersectionPoint(Vertex())
+{}
 
-Ray::Ray(Vertex *inStart, Vertex *inEnd, const ColorDbl inColor = ColorDbl())
+Ray::Ray(Vertex *inStart, Vertex *inEnd, const ColorDbl inColor)
 	: start(inStart), end(inEnd), endTriangle(nullptr), rayColor(inColor), intersectionPoint(Vertex())
 {
 
 }
 
-void Ray::setRay(Vertex *inStart, Vertex *inEnd, const ColorDbl inColor = ColorDbl())
+void Ray::setRay(Vertex *inStart, Vertex *inEnd, const ColorDbl inColor)
 {
 	start = inStart;
 	end = inEnd;
@@ -29,13 +29,13 @@ void Ray::setRayColor(const ColorDbl inColor)
 }
 
 
-Vertex Ray::getStart() const
+Vertex* Ray::getStart() const
 {
-	return *start:
+	return start;
 }
-Vertex Ray::getEnd() const
+Vertex* Ray::getEnd() const
 {
-	return *end;
+	return end;
 }
 
 

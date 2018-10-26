@@ -1,6 +1,4 @@
-#ifndef TNCG15_COLORDBL_H
-#define TNCG15_COLORDBL_H
-
+#pragma once
 class ColorDbl
 {
 public:
@@ -16,4 +14,3 @@ private:
 	double r, g, b;
 };
 
-#endif TNCG15_COLORDBL_H //TNCG15_COLORDBL_H

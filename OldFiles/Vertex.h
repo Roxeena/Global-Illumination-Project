@@ -1,14 +1,13 @@
-#ifndef TNCG15_VERTEX_H
-#define TNCG15_VERTEX_H
-
-#include "Vector3D.h"
+#pragma once
+#include "Vector.h"
 
 class Vertex
 {
 public:
+	//Constructors and destructor
 	Vertex();
+	Vertex(const Vector in);	//TODO: Compiler does not recognise Vector
 	Vertex(const float inX, const float inY, const float inZ, const float inW = 1);
-	Vertex(const Vector3D in);
 	~Vertex();
 
 	//Methods
@@ -21,4 +20,4 @@ public:
 private:
 	float x, y, z, w;
 };
-#endif //TNCG15_VERTEX_H
+

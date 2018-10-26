@@ -1,9 +1,6 @@
-#ifndef TNCG15_CAMERA_H
-#define TNCG15_CAMERA_H
-
+#pragma once
 #include "Vertex.h"
 #include "Pixel.h"
-
 class Camera
 {
 public:
@@ -23,4 +20,3 @@ private:
 	Pixel* pixels;		//pointer to array of all the pixels in the camera plane
 };
 
-#endif //TNCG15_CAMERA_H

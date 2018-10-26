@@ -1,6 +1,4 @@
-#ifndef TNCG15_PIXEL_H
-#define TNCG15_PIXEL_H
-
+#pragma once
 #include "ColorDbl.h"
 #include "Ray.h"
 
@@ -18,4 +16,4 @@ private:
 	Ray *pixelRays;			//The rays that flow through this pixel
 	const unsigned int numRays = 1;	//How many rays that flow through this pixel
 };
-#endif //TNCD15_PIXEL_H
+
