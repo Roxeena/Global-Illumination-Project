@@ -3,6 +3,7 @@
 
 
 Box::Box(const Vector position, float size, const ColorDbl boxColor)
+	: color(boxColor)
 {
 	triangles.reserve(NUM_TRIANGLES_BOX);
 	vertices.reserve(NUM_VERTICES_BOX);
@@ -86,15 +87,32 @@ bool Box::intersects(const Vector rayOrgin, const Vector rayDir, Vector &interse
 	}
 
 	//How many intersections?
-	if (count == 1)
+	if (count == 1) {
 		intersectionPoint1 = boxIntersection1;
-	else if (count == 2)
-	{
+		//std::cout << "Box intersected!" << std::endl;
+		return true;
+	}
+	else if (count == 2) {
+		//std::cout << "Box intersected! ...Twice!" << std::endl;
 		intersectionPoint1 = boxIntersection1;
 		intersectionPoint2 = boxIntersection2;
+		return true;
 	}
 	else
 		std::cout << "ehm... Something is weired here... cannot intersect box more than 2 times!" << std::endl;
 	
 	return false;
+}
+
+
+ColorDbl Box::getColor() const { return color; }
+
+void Box::setColor(const ColorDbl newColor) {
+	color = newColor;
+
+	//Loop through all the box triangles and set the new color
+	for (int i = 0; i < triangles.size(); ++i)
+	{
+		triangles[i].setColor(newColor);
+	}
 }

@@ -14,7 +14,8 @@ public:
 	//Inherited methods
 	const Vector getNormal(const Vector pos);
 	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const ;
-
+	ColorDbl getColor() const;
+	void setColor(const ColorDbl newColor);
 
 	//Methods
 	Vector getCenter() const;

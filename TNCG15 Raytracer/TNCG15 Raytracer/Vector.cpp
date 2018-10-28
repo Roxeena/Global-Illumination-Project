@@ -171,9 +171,10 @@ const Vector Vector::getInterpolation(const Vector& other, const float& ratio) c
 }
 
 
+//Both rays orginate from same point
 const Vector Vector::getReflection(const Vector& surfaceNormal) const
 {
-	return *this - surfaceNormal * ((*this * surfaceNormal) * 2);
+	return *this + ((surfaceNormal - *this) * 2);
 }
 
 

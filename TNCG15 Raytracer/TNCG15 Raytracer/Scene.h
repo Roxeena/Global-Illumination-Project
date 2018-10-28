@@ -25,10 +25,10 @@ public:
 	~Scene();
 
 	//Methods
-	void addSphere(const Vector inCenter, const float r, const ColorDbl sphereColor, const bool isLightSource = false, const bool isRefractive = false);
-	void addBox(const Vector position, float size, const ColorDbl boxColor, const bool isLightSource = false, const bool isRefractive = false);
-	void addTriangle(Vector *A, Vector *B, Vector *C, const ColorDbl triangleColor, const bool isLightSource = false, const bool isRefractive = false);
-
+	void addSphere(const Vector inCenter, const float r, const ColorDbl sphereColor, const bool isLightSource = false, const bool isPerfect = false);
+	void addBox(const Vector position, float size, const ColorDbl boxColor, const bool isLightSource = false, const bool isPerfect = false);
+	void addTriangle(Vector *A, Vector *B, Vector *C, const ColorDbl triangleColor, const bool isLightSource = false, const bool isPerfect = false);
+	std::vector<Surface*>& getObjects(); 
 
 	void detectIntersections(Ray &ray, std::vector<Intersection> &intersections);
 

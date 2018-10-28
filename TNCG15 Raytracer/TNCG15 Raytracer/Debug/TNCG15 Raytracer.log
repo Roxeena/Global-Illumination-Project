@@ -1,24 +1,7 @@
-﻿  Surface.cpp
-  Scene.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(67): error C2039: 'setRefractive': is not a member of 'Surface'
-  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(75): error C2039: 'setRefractive': is not a member of 'Surface'
-  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(84): error C2039: 'setRefractive': is not a member of 'Surface'
-  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(102): warning C4018: '<': signed/unsigned mismatch
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(105): warning C4390: ';': empty controlled statement found; is this the intent?
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(133): warning C4390: ';': empty controlled statement found; is this the intent?
-  Camera.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(25): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(93): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
-  main.cpp
-  Box.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(70): warning C4018: '<': signed/unsigned mismatch
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(73): warning C4390: ';': empty controlled statement found; is this the intent?
+﻿  Camera.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(31): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(253): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   Skipping... (no relevant changes detected)
-  Triangle.cpp
-  Sphere.cpp
+  main.cpp
+  TNCG15 Raytracer.vcxproj -> C:\Users\ElmQPC\Documents\GitHub\Global-Illumination-Project\TNCG15 Raytracer\Debug\TNCG15 Raytracer.exe

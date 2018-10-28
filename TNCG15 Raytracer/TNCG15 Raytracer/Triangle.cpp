@@ -83,6 +83,8 @@ bool Triangle::intersects(const Vector rayOrgin, const Vector rayDir, Vector &in
 	if (t > EPSILON) // ray intersection
 	{
 		intersectionPoint1 = rayOrgin + rayDir * t;
+		//std::cout << "Triangle hit!" << std::endl;
+		//std::cout << "Tri color: " << color.toString() << std::endl;
 		return true;
 	}
 	else // This means that there is a line intersection but not a ray intersection.
@@ -90,10 +92,16 @@ bool Triangle::intersects(const Vector rayOrgin, const Vector rayDir, Vector &in
 }
 
 
+ColorDbl Triangle::getColor() const { return color; }
+
+void Triangle::setColor(const ColorDbl newColor) {
+	color = newColor;
+}
+
+
 Triangle::~Triangle()
 {
 }
-
 
 Vector Triangle::edge1() const { return *(vertices[1]) - *(vertices[0]); }
 Vector Triangle::edge2() const { return *(vertices[1]) - *(vertices[2]); }

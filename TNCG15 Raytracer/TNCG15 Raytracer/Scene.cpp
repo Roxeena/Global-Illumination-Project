@@ -40,48 +40,48 @@ Scene::Scene()
 	triangles[11].set(&vertices[12], &vertices[13], &vertices[7], ColorDbl(1.0, 1.0, 1.0));
 
 	//sides
-	triangles[12].set(&vertices[1], &vertices[0], &vertices[8], ColorDbl(1.0, 0.0, 0.0));	//Red
-	triangles[13].set(&vertices[0], &vertices[7], &vertices[8], ColorDbl(1.0, 0.6, 0.0));	//Orange
+	triangles[12].set(&vertices[1], &vertices[0], &vertices[7], ColorDbl(1.0, 0.0, 0.0));	//Red
+	triangles[13].set(&vertices[7], &vertices[8], &vertices[1], ColorDbl(1.0, 0.0, 0.0));	//
 
-	triangles[14].set(&vertices[2], &vertices[1], &vertices[9], ColorDbl(1.0, 1.0, 0.0));	//Yellow
-	triangles[15].set(&vertices[1], &vertices[8], &vertices[9], ColorDbl(0.0, 1.0, 0.0));	//Green
+	triangles[14].set(&vertices[2], &vertices[1], &vertices[8], ColorDbl(1.0, 0.6, 0.0));	//Orange
+	triangles[15].set(&vertices[8], &vertices[9], &vertices[2], ColorDbl(1.0, 0.6, 0.0));	//
 
-	triangles[16].set(&vertices[3], &vertices[2], &vertices[10], ColorDbl(0.0, 0.0, 1.0));	//Blue
-	triangles[17].set(&vertices[2], &vertices[9], &vertices[10], ColorDbl(0.8, 0.0, 0.8));	//Violet
+	triangles[16].set(&vertices[3], &vertices[2], &vertices[9], ColorDbl(1.0, 1.0, 0.0));	//Yellow
+	triangles[17].set(&vertices[9], &vertices[10], &vertices[3], ColorDbl(1.0, 1.0, 0.0));	//
 
-	triangles[18].set(&vertices[4], &vertices[3], &vertices[11], ColorDbl(1.0, 0.0, 0.0));	//Red
-	triangles[19].set(&vertices[3], &vertices[10], &vertices[11], ColorDbl(1.0, 0.6, 0.0));	//Orange
+	triangles[18].set(&vertices[4], &vertices[3], &vertices[10], ColorDbl(0.0, 1.0, 0.0));	//Green
+	triangles[19].set(&vertices[10], &vertices[11], &vertices[4], ColorDbl(0.0, 1.0, 0.0));	//
 
-	triangles[20].set(&vertices[5], &vertices[4], &vertices[12], ColorDbl(1.0, 1.0, 0.0));	//Yellow
-	triangles[21].set(&vertices[4], &vertices[11], &vertices[12], ColorDbl(0.0, 1.0, 0.0));	//Green
+	triangles[20].set(&vertices[5], &vertices[4], &vertices[11], ColorDbl(0.0, 0.0, 1.0));	//Blue
+	triangles[21].set(&vertices[11], &vertices[12], &vertices[5], ColorDbl(0.0, 0.0, 1.0));	//
 
-	triangles[22].set(&vertices[0], &vertices[5], &vertices[7], ColorDbl(0.0, 0.0, 1.0));	//Blue
-	triangles[23].set(&vertices[5], &vertices[12], &vertices[7], ColorDbl(0.8, 0.0, 0.8));	//Violet
+	triangles[22].set(&vertices[0], &vertices[5], &vertices[12], ColorDbl(0.8, 0.0, 0.8));	//Violet
+	triangles[23].set(&vertices[12], &vertices[7], &vertices[0], ColorDbl(0.8, 0.0, 0.8));	//
 }
 
 
-void Scene::addSphere(const Vector inCenter, const float r, const ColorDbl sphereColor, const bool isLightSource, const bool isRefractive)
+void Scene::addSphere(const Vector inCenter, const float r, const ColorDbl sphereColor, const bool isLightSource, const bool isPerfect)
 {
 	objects.push_back(new Sphere(inCenter, r, sphereColor));
 	objects.back()->setLight(isLightSource);
-	objects.back()->setRefractive(isRefractive);
+	objects.back()->setPerfect(isPerfect);
 }
 
 
-void Scene::addBox(const Vector position, float size, const ColorDbl boxColor, const bool isLightSource, const bool isRefractive)
+void Scene::addBox(const Vector position, float size, const ColorDbl boxColor, const bool isLightSource, const bool isPerfect)
 {
 	objects.push_back(new Box(position, size, boxColor));
 	objects.back()->setLight(isLightSource);
-	objects.back()->setRefractive(isRefractive);
+	objects.back()->setPerfect(isPerfect);
 }
 
 
 
-void Scene::addTriangle(Vector *A, Vector *B, Vector *C, const ColorDbl triangleColor, const bool isLightSource, const bool isRefractive)
+void Scene::addTriangle(Vector *A, Vector *B, Vector *C, const ColorDbl triangleColor, const bool isLightSource, const bool isPerfect)
 {
 	objects.push_back(new Triangle(A, B, C, triangleColor));
 	objects.back()->setLight(isLightSource);
-	objects.back()->setRefractive(isRefractive);
+	objects.back()->setPerfect(isPerfect);
 }
 
 
@@ -92,6 +92,10 @@ Scene::~Scene()
 }
 
 
+std::vector<Surface*>& Scene::getObjects()
+{
+	return objects;
+}
 
 
 void Scene::detectIntersections(Ray &ray, std::vector<Intersection> &intersections)
@@ -102,8 +106,10 @@ void Scene::detectIntersections(Ray &ray, std::vector<Intersection> &intersectio
 	for (int i = 0; i < objects.size(); ++i)
 	{
 		//object has intersected! 
-		if (objects[i]->intersects(ray.getStart(), ray.getDir(), intersectionPoint1, intersectionPoint2) == true);
+		bool wasIntersected = objects[i]->intersects(ray.getStart(), ray.getDir(), intersectionPoint1, intersectionPoint2);
+		if (wasIntersected == true)
 		{
+			//std::cout << "Object intersected!" << std::endl;
 			//Create a new intersection object
 			Intersection inSec;
 			inSec.intersectionpoint1 = intersectionPoint1;
@@ -130,12 +136,16 @@ void Scene::detectIntersections(Ray &ray, std::vector<Intersection> &intersectio
 	for (int i = 0; i < NUM_TRIANGLES; ++i)
 	{
 		//Triangle has intersected! Add it to the list
-		if (triangles[i].intersects(ray.getStart(), ray.getDir(), intersectionPoint1, intersectionPoint2) == true);
+		bool wasIntersected = triangles[i].intersects(ray.getStart(), ray.getDir(), intersectionPoint1, intersectionPoint2);
+		if ( wasIntersected == true)
 		{
+			//std::cout << "Scene intersected!" << std::endl;
 			//Create a new intersection object
 			Intersection inSec;
 			inSec.intersectionpoint1 = intersectionPoint1;
 			inSec.object = &(triangles[i]);
+			//std::cout << "Original color: " << triangles[i].getColor().toString() << std::endl;
+			//std::cout << "Stored inSec color: " << inSec.object->getColor().toString() << std::endl;
 
 			//Add this object to the list
 			intersections.push_back(inSec);

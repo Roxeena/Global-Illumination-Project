@@ -78,10 +78,10 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <StackReserveSize>10000000000000</StackReserveSize>
+      <StackReserveSize>10000000000000000</StackReserveSize>
     </Link>
     <Link>
-      <StackCommitSize>10000000000000</StackCommitSize>
+      <StackCommitSize>10000000000000000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -92,10 +92,10 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <StackReserveSize>10000000000000</StackReserveSize>
+      <StackReserveSize>10000000000000000</StackReserveSize>
     </Link>
     <Link>
-      <StackCommitSize>10000000000000</StackCommitSize>
+      <StackCommitSize>10000000000000000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,8 +110,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <StackReserveSize>10000000000000</StackReserveSize>
-      <StackCommitSize>10000000000000</StackCommitSize>
+      <StackReserveSize>10000000000000000</StackReserveSize>
+      <StackCommitSize>10000000000000000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,8 +126,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <StackReserveSize>10000000000000</StackReserveSize>
-      <StackCommitSize>10000000000000</StackCommitSize>
+      <StackReserveSize>10000000000000000</StackReserveSize>
+      <StackCommitSize>10000000000000000</StackCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

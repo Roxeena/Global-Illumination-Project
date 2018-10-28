@@ -37,11 +37,13 @@ bool Sphere::intersects(const Vector rayOrgin, const Vector rayDir, Vector &inte
 		{
 			intersectionPoint1 = rayOrgin + rayDir * (lR + std::sqrt(underRoot));
 			intersectionPoint2 = rayOrgin + rayDir * (lR + std::sqrt(underRoot));
+			//std::cout << "Spere intersected! .. twice!" << std::endl;
 			return true;
 		}
 		//If zero then only one intersection
 		else
 		{
+			//std::cout << "Spere intersected!" << std::endl;
 			intersectionPoint1 = rayOrgin + rayDir * lR;
 			return true;
 		}
@@ -49,6 +51,14 @@ bool Sphere::intersects(const Vector rayOrgin, const Vector rayDir, Vector &inte
 
 	return false;
 }
+
+
+ColorDbl Sphere::getColor() const {
+	return color;
+}
+
+
+void Sphere::setColor(const ColorDbl newColor) { color = newColor; }
 
 
 Vector Sphere::getCenter() const { return center; }

@@ -8,8 +8,8 @@
 #include "Ray.h"
 #include "Pixel.h"
 
-const int WIDTH = 400;
-const int HEIGHT = 400;
+const int WIDTH = 100;
+const int HEIGHT = 100;
 const int MAX_DEPTH = 5;
 
 class Camera
@@ -27,11 +27,11 @@ public:
 
 private:
 	//field of view in radians
-	float fov = ((float)M_PI )/ 1.5;
+	float fov = ((float)M_PI )/ 1.5f;
 
 	//Camera positions
 	const Vector POS1 = Vector(-2.0f, 0.0f, 0.0f);
-	const Vector POS2 = Vector(-1.0, 0.0f, 0.0f);
+	const Vector POS2 = Vector(-1.0f, 0.0f, 0.0f);
 	const Vector LOOKAT = Vector(1.0f, 0.0f, 0.0f);
 	bool isPos1;
 
@@ -51,5 +51,6 @@ private:
 	ColorDbl castRay(Scene &room, Ray &ray, int depth = 0);
 	void writeToFile(const std::string filename, const double &max);
 	Vector getPos() const;
+	double randMinMax(const double min, const double max) const;
 };
 
