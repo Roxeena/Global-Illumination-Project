@@ -9,7 +9,7 @@ Vector::Vector()
 { }
 
 
-Vector::Vector(const float& X, const float& Y, const float& Z)
+Vector::Vector(const double& X, const double& Y, const double& Z)
 	: x(X), y(Y), z(Z)
 { }
 
@@ -18,37 +18,37 @@ Vector::~Vector()
 { }
 
 
-const float& Vector::getX() const {
+const double& Vector::getX() const {
 	return x;
 }
 
 
-void Vector::setX(const float& newX) {
+void Vector::setX(const double& newX) {
 	x = newX;
 }
 
 
-const float& Vector::getY() const  {
+const double& Vector::getY() const  {
 	return y;
 }
 
 
-void Vector::setY(const float& newY) {
+void Vector::setY(const double& newY) {
 	y = newY;
 }
 
 
-const float& Vector::getZ() const {
+const double& Vector::getZ() const {
 	return z;
 }
 
 
-void Vector::setZ(const float& newZ) {
+void Vector::setZ(const double& newZ) {
 	z = newZ;
 }
 
 
-void Vector::get(float& X, float& Y, float& Z) const
+void Vector::get(double& X, double& Y, double& Z) const
 {
 	X = x;
 	Y = y;
@@ -56,7 +56,7 @@ void Vector::get(float& X, float& Y, float& Z) const
 }
 
 
-void Vector::set(const float& X, const float& Y, const float& Z)
+void Vector::set(const double& X, const double& Y, const double& Z)
 {
 	x = X;
 	y = Y;
@@ -94,31 +94,31 @@ Vector& Vector::operator-= (const Vector& other)
 }
 
 
-const Vector Vector::operator* (const float& scalar) const
+const Vector Vector::operator* (const double& scalar) const
 {
 	return Vector(x*scalar, y*scalar, z*scalar);
 }
 
 
-Vector& Vector::operator*= (const float& scalar)
+Vector& Vector::operator*= (const double& scalar)
 {
 	return *this = *this * scalar;
 }
 
 
-const Vector Vector::operator/ (const float& scalar) const
+const Vector Vector::operator/ (const double& scalar) const
 {
 	return Vector(x / scalar, y / scalar, z / scalar);
 }
 
 
-Vector& Vector::operator/= (const float& scalar)
+Vector& Vector::operator/= (const double& scalar)
 {
 	return *this = *this / scalar;
 }
 
 
-const float Vector::operator* (const Vector& other) const
+const double Vector::operator* (const Vector& other) const
 {
 	return x * other.x + y * other.y + z * other.z;
 }
@@ -138,13 +138,13 @@ Vector& Vector::operator%= (const Vector& other)
 }
 
 
-const float Vector::getSqrLen() const
+const double Vector::getSqrLen() const
 {
 	return x * x + y * y + z * z;
 }
 
 
-const float Vector::getLen() const
+const double Vector::getLen() const
 {
 	return std::sqrt(getSqrLen());
 }
@@ -165,7 +165,7 @@ void Vector::normalize()
 }
 
 
-const Vector Vector::getInterpolation(const Vector& other, const float& ratio) const
+const Vector Vector::getInterpolation(const Vector& other, const double& ratio) const
 {
 	return *this + (other - *this)*ratio;
 }

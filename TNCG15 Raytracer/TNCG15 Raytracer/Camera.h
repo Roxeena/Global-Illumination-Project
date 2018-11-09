@@ -8,8 +8,8 @@
 #include "Ray.h"
 #include "Pixel.h"
 
-const int WIDTH = 100;
-const int HEIGHT = 100;
+const int WIDTH = 200;
+const int HEIGHT = 200;
 const int MAX_DEPTH = 5;
 
 class Camera
@@ -30,7 +30,7 @@ private:
 	float fov = ((float)M_PI )/ 1.5f;
 
 	//Camera positions
-	const Vector POS1 = Vector(-2.0f, 0.0f, 0.0f);
+	const Vector POS1 = Vector(-1.0f, 0.0f, 0.0f);
 	const Vector POS2 = Vector(-1.0f, 0.0f, 0.0f);
 	const Vector LOOKAT = Vector(1.0f, 0.0f, 0.0f);
 	bool isPos1;
@@ -43,7 +43,7 @@ private:
 	int spp = 1;
 
 	//Divide eacxh pixle into a number of sub-pixles
-	int subPixels = 1;
+	int subPixels = 2;
 
 	//Methods
 	void createPixles();

@@ -53,13 +53,20 @@ void Camera::createPixles()
 		for (int w = 0; w < WIDTH; ++w) {
 			Pixel p = Pixel();
 
-			float diff = 1.0f / subPixels;
+			//Find the middle of the pixel
+			float pixelSize = 1.0f / WIDTH;
+			Vector mid = Vector(0.0, (float)(-w * pixelSize + (1 - pixelSize / 2.0)), (float)(-h * pixelSize + (1 - pixelSize / 2.0)));
+
+			
 			for (int subX = 0; subX < subPixels; ++subX) {
 				for (int subY = 0; subY < subPixels; ++subY) {
-					double x = randMinMax(w + subX * diff, w + (subX + 1) * diff);
-					double y = randMinMax(h + subY * diff, h + (subY + 1) * diff);
-					Ray r = getRayFromPixelCoords(x, y);
-					p.addRay(r);
+					Vector rayEnd = Vector(0.0, mid.getY() + (pixelSize*subY / 4.0), mid.getZ() + (pixelSize*subX / 4.0));
+					Vector rayStart = getPos();
+					Vector rayDir = rayEnd - rayStart;
+
+					//Create a new ray
+					Ray newRay = Ray(rayStart, rayDir, ColorDbl());
+					p.addRay(newRay);
 				}
 			}
 
@@ -121,7 +128,7 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 		//std::cout << "Found intersections!" << std::endl;
 		int closest = -1;
 		bool hit1 = true;
-		float distance1, distance2, bestDistance = 0.0f;
+		double distance1, distance2, bestDistance = 0.0f;
 
 		//Find the closest intersection, direct hit.
 		for (unsigned int i = 0; i < intersections.size(); ++i)
@@ -186,6 +193,8 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 			ColorDbl indirectIllumination = ColorDbl();
 			ColorDbl directIllumination = ColorDbl();
 
+			resultingColor = intersections[closest].object->getColor();
+			
 			//Otherwise calculate outgoing color
 			//Depending on the material
 			if (intersections[closest].object->isPerfect()) {
@@ -197,7 +206,7 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 			else if(depth < MAX_DEPTH) {
 				//TODO! Lambertian reflector
 
-				/*Indirect illumination*/
+				//Indirect illumination
 				float absorbtion = 0.5f;
 
 				// Russian roulette
@@ -234,7 +243,7 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 					indirectIllumination /= ((1 - absorption));
 				}
 
-				/*Direct illumination*/
+				//Direct illumination
 
 				int shadowRays = 4;
 				std::vector<Surface*> objects = room.getObjects();
@@ -280,7 +289,7 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 			resultingColor = (indirectIllumination * 2.0 + directIllumination / M_PI);
 			//std::cout << "Setting resulting Color to: " << intersections[closest].object->getColor().toString() << std::endl;
 			//Bounce the ray
-			/*Vector temp = -(ray.getDir().getUnit());
+			Vector temp = -(ray.getDir().getUnit());
 			Vector point;
 			if(hit1)
 				point = intersections[closest].intersectionpoint1;
@@ -291,13 +300,14 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 
 			Vector outDir = temp.getReflection(normal);
 			Ray out = Ray(point, outDir, resultingColor);
-			*/
+			
 
 			//TODO!
 			//Do over with the new outgoing ray
 
 			//Decide if we should terminate the ray or not
 			//Russian roulette
+			
 		}
 		else {
 			std::cout << "Could not find the closest hit!" << std::endl;

@@ -1,7 +1,64 @@
-﻿  Camera.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(31): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(253): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Vector.cpp
+  Camera.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(137): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(139): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(221): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(222): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(236): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(237): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(238): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(240): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(250): warning C4018: '<': signed/unsigned mismatch
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(258): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(258): error C3861: 'findLightDirection': identifier not found
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(259): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): error C2065: 'o': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): error C2228: left of '.intersects' must have class/struct/union
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): error C2065: 'inSecPoint1': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(265): error C2065: 'inSecPoint2': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(266): error C2065: 'inSecPoint1': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(266): error C2065: 'o': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(266): error C2227: left of '->isLight' must point to class/struct/union/generic type
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(266): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(271): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(272): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(275): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(276): error C2039: 'getRadius': is not a member of 'Surface'
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(280): error C2039: 'color': is not a member of 'Surface'
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(280): error C2065: 's': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(280): error C2227: left of '->color' must point to class/struct/union/generic type
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(280): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(285): error C2065: 'tempColor': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(293): error C2086: 'Vector point': redefinition
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(184): note: see declaration of 'point'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(299): error C2374: 'normal': redefinition; multiple initialization
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(190): note: see declaration of 'normal'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(301): error C2374: 'outDir': redefinition; multiple initialization
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(192): note: see declaration of 'outDir'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(358): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+  Triangle.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(63): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(82): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Sphere.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\sphere.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\sphere.cpp(30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Scene.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(106): warning C4018: '<': signed/unsigned mismatch
+  Ray.cpp
+  Pixel.cpp
+  Box.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(71): warning C4018: '<': signed/unsigned mismatch
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(74): warning C4390: ';': empty controlled statement found; is this the intent?
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(114): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
   Skipping... (no relevant changes detected)
-  main.cpp
-  TNCG15 Raytracer.vcxproj -> C:\Users\ElmQPC\Documents\GitHub\Global-Illumination-Project\TNCG15 Raytracer\Debug\TNCG15 Raytracer.exe
+  Surface.cpp

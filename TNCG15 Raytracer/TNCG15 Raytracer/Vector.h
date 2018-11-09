@@ -6,21 +6,21 @@ class Vector
 public:
 	/*Constructors and destructor*/
 	Vector();
-	Vector(const float& x, const float& y, const float& z);
+	Vector(const double& x, const double& y, const double& z);
 	~Vector();
 
 	/*Get-Set methods*/
-	const float& getX() const;
-	void setX(const float& newX);
+	const double& getX() const;
+	void setX(const double& newX);
 
-	const float& getY() const;
-	void setY(const float& newY);
+	const double& getY() const;
+	void setY(const double& newY);
 
-	const float& getZ() const;
-	void setZ(const float& newZ);
+	const double& getZ() const;
+	void setZ(const double& newZ);
 
-	void get(float& x, float& y, float& z) const;
-	void set(const float& x, const float& y, const float& z);
+	void get(double& x, double& y, double& z) const;
+	void set(const double& x, const double& y, const double& z);
 
 	/*Standard operations*/
 	const Vector operator+ (const Vector& other) const;
@@ -33,15 +33,15 @@ public:
 	Vector& operator-= (const Vector& other);
 
 	//Multiplying *this by a scalar
-	const Vector operator* (const float& scalar) const;
-	Vector& operator*= (const float& scalar);
+	const Vector operator* (const double& scalar) const;
+	Vector& operator*= (const double& scalar);
 
 	//Same as multiplication by 1/scalar
-	const Vector operator/ (const float& scalar) const;
-	Vector& operator/= (const float& scalar);
+	const Vector operator/ (const double& scalar) const;
+	Vector& operator/= (const double& scalar);
 
 	//Calculate the scalarproduct
-	const float operator* (const Vector& other) const;
+	const double operator* (const Vector& other) const;
 
 	//Calculate the crossproduct
 	const Vector operator% (const Vector& other) const;
@@ -49,9 +49,9 @@ public:
 
 	/*Auxiliary methods*/
 	//Returns the squared length of *this
-	const float getSqrLen() const;
+	const double getSqrLen() const;
 	//Returns the length of *this
-	const float getLen() const;
+	const double getLen() const;
 
 	//Returns a vector with the same orientation, but normalized
 	const Vector getUnit() const;
@@ -59,7 +59,7 @@ public:
 	void normalize();
 
 	//Interpolates *this between another vector, by a ratio
-	const Vector getInterpolation(const Vector& other, const float& ratio) const;
+	const Vector getInterpolation(const Vector& other, const double& ratio) const;
 
 	//Reflects *this according to a surface's normal
 	const Vector getReflection(const Vector& surfaceNormal) const;
@@ -73,8 +73,8 @@ public:
 
 
 private:
-	float x;
-	float y;
-	float z;
+	double x;
+	double y;
+	double z;
 };
 

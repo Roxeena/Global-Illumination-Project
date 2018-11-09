@@ -1,0 +1,40 @@
+﻿  Vector.cpp
+  Triangle.cpp
+  Surface.cpp
+  Sphere.cpp
+  Scene.cpp
+  Ray.cpp
+  Pixel.cpp
+  main.cpp
+  ColorDbl.cpp
+  Camera.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(32): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(212): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(213): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(227): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(231): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(249): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(249): error C3861: 'findLightDirection': identifier not found
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): error C2065: 'o': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): error C2228: left of '.intersects' must have class/struct/union
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): error C2065: 'p': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): error C2065: 'inSecPoint1': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(256): error C2065: 'inSecPoint2': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(257): error C2065: 'inSecPoint1': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(257): error C2065: 'o': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(257): error C2227: left of '->isLight' must point to class/struct/union/generic type
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(257): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(262): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(267): error C2039: 'getRadius': is not a member of 'Surface'
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(271): error C2039: 'color': is not a member of 'Surface'
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\surface.h(8): note: see declaration of 'Surface'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(271): error C2065: 's': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(271): error C2227: left of '->color' must point to class/struct/union/generic type
+  c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(271): note: type is 'unknown-type'
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(276): error C2065: 'tempColor': undeclared identifier
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(348): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Box.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(74): warning C4390: ';': empty controlled statement found; is this the intent?
+  Generating Code...
