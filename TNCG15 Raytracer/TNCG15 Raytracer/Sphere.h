@@ -16,9 +16,9 @@ public:
 	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const ;
 	ColorDbl getColor() const;
 	void setColor(const ColorDbl newColor);
+	Vector getCenter() const;
 
 	//Methods
-	Vector getCenter() const;
 	float getRadius() const;
 
 private:

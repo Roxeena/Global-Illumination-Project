@@ -7,10 +7,12 @@
 #include "ColorDbl.h"
 #include "Ray.h"
 #include "Pixel.h"
+#include "Sphere.h"
 
 const int WIDTH = 200;
 const int HEIGHT = 200;
 const int MAX_DEPTH = 5;
+const int NUM_SHADOW_RAYS = 4;
 
 class Camera
 {
@@ -30,7 +32,7 @@ private:
 	float fov = ((float)M_PI )/ 1.5f;
 
 	//Camera positions
-	const Vector POS1 = Vector(-1.0f, 0.0f, 0.0f);
+	const Vector POS1 = Vector(-2.0f, 0.0f, 0.0f);
 	const Vector POS2 = Vector(-1.0f, 0.0f, 0.0f);
 	const Vector LOOKAT = Vector(1.0f, 0.0f, 0.0f);
 	bool isPos1;
@@ -39,10 +41,8 @@ private:
 	std::array<std::array<Pixel, WIDTH>, HEIGHT> pixels;
 	Ray getRayFromPixelCoords(const double w, const double h);
 
-	//Number of samples per pixle
-	int spp = 1;
-
-	//Divide eacxh pixle into a number of sub-pixles
+	//Divide eacxh pixle into a number of sub-pixles, both subpixle in x and y
+	//Cast one ray per subpixel
 	int subPixels = 2;
 
 	//Methods
@@ -52,5 +52,12 @@ private:
 	void writeToFile(const std::string filename, const double &max);
 	Vector getPos() const;
 	double randMinMax(const double min, const double max) const;
+
+	//Light Calculations
+	ColorDbl calculatePerfect(const Surface* object, const Vector intersecP, const Ray inRay) const;
+	ColorDbl calculateDirect(Scene & room, const Surface* object, const Vector intersecP, const Ray inRay) const;
+	ColorDbl calculateIndirect(const int depth, const Surface* object, const Vector intersecP, const Ray inRay) const;
+	//Get random point on light source
+	Vector getRanomPoint(const Vector point, const Surface *light) const;
 };
 

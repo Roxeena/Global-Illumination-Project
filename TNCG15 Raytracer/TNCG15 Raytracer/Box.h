@@ -13,7 +13,7 @@ class Box :
 {
 public:
 	//Constructors and destructor
-	Box(const Vector position, float size, const ColorDbl boxColor);
+	Box(const Vector pos, float size, const ColorDbl boxColor);
 	virtual ~Box();
 
 	//Inherited  methods 
@@ -21,11 +21,13 @@ public:
 	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const ;
 	ColorDbl getColor() const;
 	void setColor(const ColorDbl newColor);
+	Vector getCenter() const;
 
 	//Methods
 	const std::vector<Triangle>& getTriangles() const;
 
 private:
+	Vector position; 
 	std::vector<Triangle> triangles;
 	std::vector<Vector> vertices;
 	ColorDbl color; 

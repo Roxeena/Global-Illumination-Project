@@ -15,6 +15,7 @@ public:
 	virtual bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const = 0;
 	virtual ColorDbl getColor() const = 0;
 	virtual void setColor(const ColorDbl newColor) = 0;
+	virtual Vector getCenter() const = 0;
 
 	//Methods
 	void setLight(const bool isLight);

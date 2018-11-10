@@ -1,7 +1,4 @@
-﻿  Vector.cpp
-  Camera.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(137): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(139): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  Camera.cpp
 c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(221): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(222): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\camera.cpp(236): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -43,22 +40,4 @@ c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tn
   Generating Code...
   Compiling...
   main.cpp
-  Triangle.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(63): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\triangle.cpp(82): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Sphere.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\sphere.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\sphere.cpp(30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Scene.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\scene.cpp(106): warning C4018: '<': signed/unsigned mismatch
-  Ray.cpp
-  Pixel.cpp
-  Box.cpp
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(71): warning C4018: '<': signed/unsigned mismatch
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(74): warning C4390: ';': empty controlled statement found; is this the intent?
-c:\users\elmqpc\documents\github\global-illumination-project\tncg15 raytracer\tncg15 raytracer\box.cpp(114): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  Skipping... (no relevant changes detected)
-  Surface.cpp

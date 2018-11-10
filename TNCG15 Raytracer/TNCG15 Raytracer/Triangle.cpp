@@ -99,6 +99,14 @@ void Triangle::setColor(const ColorDbl newColor) {
 }
 
 
+Vector Triangle::getCenter() const
+{
+	Vector halfEdge1 = edge1()*0.5;
+	Vector fromHE1ToC = *(vertices[2]) - halfEdge1;
+	return halfEdge1 + (fromHE1ToC*0.5);
+}
+
+
 Triangle::~Triangle()
 {
 }

@@ -2,24 +2,24 @@
 
 
 
-Box::Box(const Vector position, float size, const ColorDbl boxColor)
-	: color(boxColor)
+Box::Box(const Vector pos, float size, const ColorDbl boxColor)
+	: position(pos), color(boxColor)
 {
 	triangles.reserve(NUM_TRIANGLES_BOX);
 	vertices.reserve(NUM_VERTICES_BOX);
 
 	//Create the vertices
 	//Bot
-	vertices.push_back(position);
-	vertices.push_back(Vector(position.getX() + size, position.getY(), position.getZ()));
-	vertices.push_back(Vector(position.getX(), position.getY(), position.getZ() + size));
-	vertices.push_back(Vector(position.getX() + size, position.getY(), position.getZ() + size));
+	vertices.push_back(pos);
+	vertices.push_back(Vector(pos.getX() + size, pos.getY(), pos.getZ()));
+	vertices.push_back(Vector(pos.getX(), pos.getY(), pos.getZ() + size));
+	vertices.push_back(Vector(pos.getX() + size, pos.getY(), pos.getZ() + size));
 
 	//Top
-	vertices.push_back(Vector(position.getX(), position.getY() + size, position.getZ()));
-	vertices.push_back(Vector(position.getX() + size, position.getY() + size, position.getZ()));
-	vertices.push_back(Vector(position.getX(), position.getY() + size, position.getZ() + size));
-	vertices.push_back(Vector(position.getX() + size, position.getY() + size, position.getZ() + size));
+	vertices.push_back(Vector(pos.getX(), pos.getY() + size, pos.getZ()));
+	vertices.push_back(Vector(pos.getX() + size, pos.getY() + size, pos.getZ()));
+	vertices.push_back(Vector(pos.getX(), pos.getY() + size, pos.getZ() + size));
+	vertices.push_back(Vector(pos.getX() + size, pos.getY() + size, pos.getZ() + size));
 
 	//Create the Triangles
 	//Sides
@@ -115,4 +115,14 @@ void Box::setColor(const ColorDbl newColor) {
 	{
 		triangles[i].setColor(newColor);
 	}
+}
+
+
+Vector Box::getCenter() const
+{
+	double newX = vertices[1].getX() - position.getX();
+	double newY = vertices[4].getY() - position.getY();
+	double newZ = vertices[2].getZ() - position.getZ();
+
+	return Vector(newX, newY, newZ);
 }

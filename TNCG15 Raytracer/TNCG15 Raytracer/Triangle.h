@@ -18,6 +18,7 @@ public:
 	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const;
 	ColorDbl getColor() const;
 	void setColor(const ColorDbl newColor);
+	Vector getCenter() const;
 
 	//Methods
 	void set(Vector *A, Vector *B, Vector *C, const ColorDbl triangleColor);
