@@ -44,7 +44,7 @@ void Triangle::set(Vector *A, Vector *B, Vector *C, const Vector inNormal, const
 	normal = inNormal;
 }
 
-const Vector Triangle::getNormal(const Vector pos) { return normal; }
+const Vector Triangle::getNormal(const Vector pos) const { return normal; }
 
 
 //TODO!
@@ -104,6 +104,14 @@ Vector Triangle::getCenter() const
 	Vector halfEdge1 = edge1()*0.5;
 	Vector fromHE1ToC = *(vertices[2]) - halfEdge1;
 	return halfEdge1 + (fromHE1ToC*0.5);
+}
+
+
+double Triangle::getArea() const
+{
+	Vector halfEdge1 = edge1()*0.5;
+	Vector fromHE1ToC = *(vertices[2]) - halfEdge1;
+	return (fromHE1ToC.getLen() * edge1().getLen())/ 2.0;
 }
 
 

@@ -54,7 +54,7 @@ const std::vector<Triangle>& Box::getTriangles() const { return triangles; }
 
 
 //TODO!
-const Vector Box::getNormal(const Vector pos)
+const Vector Box::getNormal(const Vector pos) const
 {
 	return Vector();
 }
@@ -125,4 +125,11 @@ Vector Box::getCenter() const
 	double newZ = vertices[2].getZ() - position.getZ();
 
 	return Vector(newX, newY, newZ);
+}
+
+
+double Box::getArea() const
+{
+	double size = vertices[1].getX() - vertices[0].getX();
+	return 6.0*size*size;
 }

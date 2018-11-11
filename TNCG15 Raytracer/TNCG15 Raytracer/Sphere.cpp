@@ -14,7 +14,7 @@ Sphere::~Sphere()
 
 
 //TODO!
-const Vector Sphere::getNormal(const Vector pos)
+const Vector Sphere::getNormal(const Vector pos) const
 {
 	return Vector();
 }
@@ -55,6 +55,12 @@ bool Sphere::intersects(const Vector rayOrgin, const Vector rayDir, Vector &inte
 
 ColorDbl Sphere::getColor() const {
 	return color;
+}
+
+
+double Sphere::getArea() const
+{
+	return 4.0*M_PI*radius*radius;
 }
 
 

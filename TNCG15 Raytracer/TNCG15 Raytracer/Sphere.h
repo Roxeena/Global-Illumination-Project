@@ -12,11 +12,12 @@ public:
 	virtual ~Sphere();
 
 	//Inherited methods
-	const Vector getNormal(const Vector pos);
+	const Vector getNormal(const Vector pos) const;
 	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const ;
 	ColorDbl getColor() const;
 	void setColor(const ColorDbl newColor);
 	Vector getCenter() const;
+	double getArea() const;
 
 	//Methods
 	float getRadius() const;

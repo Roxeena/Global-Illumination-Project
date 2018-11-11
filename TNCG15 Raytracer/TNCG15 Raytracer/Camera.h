@@ -53,6 +53,10 @@ private:
 	Vector getPos() const;
 	double randMinMax(const double min, const double max) const;
 
+	//Find the closest intersection point in the vecotr with intersections, return the index to where the closest intersection is in the vector
+	//Return also the distances and bool to say if first or seciond hit was closest
+	int findClosestIntersection(const std::vector<Intersection> &intersections, const Ray ray, double &distance1, double &distance2, bool &hit1) const;
+
 	//Light Calculations
 	ColorDbl calculatePerfect(const Surface* object, const Vector intersecP, const Ray inRay) const;
 	ColorDbl calculateDirect(Scene & room, const Surface* object, const Vector intersecP, const Ray inRay) const;
