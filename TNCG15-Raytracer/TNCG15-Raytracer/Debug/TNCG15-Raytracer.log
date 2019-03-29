@@ -1,0 +1,7 @@
+﻿  Camera.cpp
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15-raytracer\tncg15-raytracer\camera.cpp(230): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15-raytracer\tncg15-raytracer\camera.cpp(250): warning C4018: '<': signed/unsigned mismatch
+c:\users\elmqpc\documents\github\global-illumination-project\tncg15-raytracer\tncg15-raytracer\camera.cpp(254): warning C4930: 'ColorDbl tempColor(void)': prototyped function not called (was a variable definition intended?)
+  main.cpp
+  Generating Code...
+  TNCG15-Raytracer.vcxproj -> C:\Users\ElmQPC\Documents\GitHub\Global-Illumination-Project\TNCG15-Raytracer\Debug\TNCG15-Raytracer.exe
