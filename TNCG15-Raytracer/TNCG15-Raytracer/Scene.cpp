@@ -7,6 +7,7 @@
 Scene::Scene()
 {
 	//Create the vertices
+	//Top
 	vertices[0].set(-3.0, 0.0, 5.0);
 	vertices[1].set(0.0, 6.0, 5.0);
 	vertices[2].set(10.0, 6.0, 5.0);
@@ -15,6 +16,7 @@ Scene::Scene()
 	vertices[5].set(0.0, -6.0, 5.0);
 	vertices[6].set(5.0, 0.0, 5.0);
 
+	//Bot
 	vertices[7].set(-3.0, 0.0, -5.0);
 	vertices[8].set(0.0, 6.0, -5.0);
 	vertices[9].set(10.0, 6.0, -5.0);
@@ -58,6 +60,46 @@ Scene::Scene()
 
 	triangles[22].set(&vertices[0], &vertices[5], &vertices[12], ColorDbl(0.8, 0.0, 0.8));	//Violet
 	triangles[23].set(&vertices[12], &vertices[7], &vertices[0], ColorDbl(0.8, 0.0, 0.8));	//
+	
+
+	//DEBUG: BOX scene
+	//Create the vertices
+	/*Vector pos = Vector(-5, -5, -5);
+	float size = 10;
+	//Create the box room in the scene
+	//Roof
+	vertices[0].set(pos.getX(), pos.getY(), pos.getZ());
+	vertices[1].set(pos.getX() + size, pos.getY(), pos.getZ());
+	vertices[2].set(pos.getX(), pos.getY(), pos.getZ() + size);
+	vertices[3].set(pos.getX() + size, pos.getY(), pos.getZ() + size);
+
+	//Bot
+	vertices[4].set(pos.getX(), pos.getY() + size, pos.getZ());
+	vertices[5].set(pos.getX() + size, pos.getY() + size, pos.getZ());
+	vertices[6].set(pos.getX(), pos.getY() + size, pos.getZ() + size);
+	vertices[7].set(pos.getX() + size, pos.getY() + size, pos.getZ() + size);
+
+	//sides
+	triangles[0].set(&vertices[1], &vertices[5], &vertices[0], ColorDbl(1.0, 0.0, 0.0));	//Red
+	triangles[1].set(&vertices[4], &vertices[0], &vertices[5], ColorDbl(1.0, 0.0, 0.0));	//
+
+	triangles[2].set(&vertices[0], &vertices[4], &vertices[2], ColorDbl(1.0, 0.6, 0.0));	//Orange
+	triangles[3].set(&vertices[6], &vertices[2], &vertices[4], ColorDbl(1.0, 0.6, 0.0));	//
+
+	triangles[4].set(&vertices[2], &vertices[6], &vertices[3], ColorDbl(1.0, 1.0, 0.0));	//Yellow
+	triangles[5].set(&vertices[7], &vertices[3], &vertices[6], ColorDbl(1.0, 1.0, 0.0));	//
+
+	triangles[6].set(&vertices[3], &vertices[7], &vertices[1], ColorDbl(0.0, 1.0, 0.0));	//Green
+	triangles[7].set(&vertices[5], &vertices[1], &vertices[7], ColorDbl(0.0, 0.0, 1.0));	//
+
+	//Bot
+	triangles[8].set(&vertices[0], &vertices[2], &vertices[1], ColorDbl(0.0, 0.0, 1.0));	//Blue
+	triangles[9].set(&vertices[3], &vertices[1], &vertices[2], ColorDbl(0.0, 0.0, 1.0));	//
+
+	//Top
+	triangles[10].set(&vertices[5], &vertices[7], &vertices[4], ColorDbl(0.8, 0.0, 0.8));	//Violet
+	triangles[11].set(&vertices[6], &vertices[4], &vertices[7], ColorDbl(0.8, 0.0, 0.8));	//
+	*/
 }
 
 
@@ -152,4 +194,5 @@ void Scene::detectIntersections(Ray &ray, std::vector<Intersection> &intersectio
 			intersections.push_back(inSec);
 		}
 	}
+	//std::cout << "num Intersections: " << intersections.size() << std::endl;
 }

@@ -41,14 +41,14 @@ void Camera::createImage(Scene &room, std::string filename)
 //DONE??
 void Camera::createPixles()
 {
-	for (int h = 0; h < HEIGHT; ++h) {
-		for (int w = 0; w < WIDTH; ++w) {
+	for (int w = 0; w < WIDTH; ++w) {
+		for (int h = 0; h < HEIGHT; ++h) {
 			Pixel p = Pixel();
 
 			//Find the middle of the pixel
 			float pixelSize = camPlaneSize / WIDTH;
 			p.setSize(pixelSize);
-			Vector mid = cameraPlane[0] + Vector(0, pixelSize / 2.0f * (w + 1), pixelSize / 2.0f * (h+ 1));
+			Vector mid = cameraPlane[0] + Vector(0, pixelSize / 2.0f * (w + 1), pixelSize / 2.0f * (h + 1));
 			float min = -1 + pixelSize / 2.0f;
 			//Find the middle of the subpixels
 			//Create a ray for every subpixel and add to the list of rays for this pixel
@@ -57,9 +57,10 @@ void Camera::createPixles()
 			for (int subX = 0; subX < subPixels; ++subX) {
 				for (int subY = 0; subY < subPixels; ++subY) {
 					//Vector rayEnd = mid;
-					Vector rayEnd = Vector(0, w * pixelSize + min, h*pixelSize + min);
+					Vector rayEnd = Vector(0, w*pixelSize + min, h*pixelSize + min);
 					Vector rayStart = getPos();
 					Vector rayDir = rayEnd - rayStart;
+					rayDir.normalize();
 
 					//Create a new ray
 					Ray newRay = Ray(rayStart, rayDir, ColorDbl());
@@ -132,28 +133,28 @@ ColorDbl Camera::castRay(Scene &room, Ray &ray, int depth)
 			//std::cout << "Found closest intersection!" << std::endl;
 
 			//If it is a light source return light color
-			if (intersections[closest].object->isLight()) {
+			if (intersections[0].object->isLight()) {
 				//std::cout << "Found Light Source!" << std::endl;
-				return intersections[closest].object->getColor();
+				return intersections[0].object->getColor();
 			}
 
 			//Find the intersection point and which one it is
 			Vector point;
-			point = hit1 ? intersections[closest].intersectionpoint1 : intersections[closest].intersectionpoint2;
+			point = hit1 ? intersections[0].intersectionpoint1 : intersections[0].intersectionpoint2;
 
 			//Calculate the reflected ray from the surface
-			Vector normal = intersections[closest].object->getNormal(point);
+			Vector normal = intersections[0].object->getNormal(point);
 			Vector flip = -(ray.getDir().getUnit());
 			Vector outDir = flip.getReflection(normal);
 			ColorDbl indirectIllumination = ColorDbl();
 			ColorDbl directIllumination = ColorDbl();
 
 			//DEBUG
-			resultingColor = intersections[closest].object->getColor();
+			resultingColor = intersections[0].object->getColor();
 
 			//Calculate outgoing color depending on the material
 			//PERFECT
-			if (intersections[closest].object->isPerfect()) {
+			if (intersections[0].object->isPerfect()) {
 				//TODO! Perfect reflector
 				//Follow light around scene and return the color of the ray coming back
 				//Metallic object
@@ -398,5 +399,6 @@ int Camera::findClosestIntersection(const std::vector<Intersection> &intersectio
 			else continue;
 		}
 	}
+	//std::cout << "Closesd: " << closest << std::endl;
 	return closest;
 }

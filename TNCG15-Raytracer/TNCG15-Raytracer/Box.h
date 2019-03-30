@@ -17,12 +17,12 @@ public:
 	virtual ~Box();
 
 	//Inherited  methods 
-	const Vector getNormal(const Vector pos) const;
-	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const;
-	ColorDbl getColor() const;
-	void setColor(const ColorDbl newColor);
-	Vector getCenter() const;
-	double getArea() const;
+	const Vector getNormal(const Vector pos) const override;
+	bool intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const override;
+	ColorDbl getColor() const override;
+	void setColor(const ColorDbl newColor) override;
+	Vector getCenter() const override;
+	double getArea() const override;
 
 	//Methods
 	const std::vector<Triangle>& getTriangles() const;

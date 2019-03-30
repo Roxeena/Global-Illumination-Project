@@ -59,7 +59,7 @@ const Vector Box::getNormal(const Vector pos) const
 }
 
 
-//TODO! get Intersection in Box
+//TODO! FIX Intersection in Box
 bool Box::intersects(const Vector rayOrgin, const Vector rayDir, Vector &intersectionPoint1, Vector &intersectionPoint2) const
 {
 	int count = 0;
@@ -70,18 +70,23 @@ bool Box::intersects(const Vector rayOrgin, const Vector rayDir, Vector &interse
 	for (int i = 0; i < triangles.size(); ++i)
 	{
 		//One triangle has intersected!
-		if (triangles[i].intersects(rayOrgin, rayDir, intersectionPoint1, intersectionPoint2) == true);
+		if (triangles[i].intersects(rayOrgin, rayDir, boxIntersection1, boxIntersection2));
 		{
+			//Hit!
 			++count;
+
 			//If one intersection so far
 			if (count == 1)
-				boxIntersection1 = intersectionPoint1;
+				intersectionPoint1 = boxIntersection1;
 			//If two intersections so far
 			else if (count == 2)
-				boxIntersection2 = intersectionPoint1;
+				intersectionPoint2 = boxIntersection2;
 			//Weired if more than 2 intersections!
 			else
-				std::cout << "ehm... Something is weired here... cannot intersect box more than 2 times!" << std::endl;
+			{
+				//std::cout << "ehm... Something is weired here... cannot intersect box more than 2 times!" << std::endl;
+				//std::cout << count << std::endl;
+			}
 		}
 	}
 
@@ -97,8 +102,11 @@ bool Box::intersects(const Vector rayOrgin, const Vector rayDir, Vector &interse
 		intersectionPoint2 = boxIntersection2;
 		return true;
 	}
-	else
-		std::cout << "ehm... Something is weired here... cannot intersect box more than 2 times!" << std::endl;
+	else if (count > 2)
+	{
+		return true;
+	}
+		//std::cout << "ehm... Something is weired here... cannot intersect box more than 2 times!" << std::endl;
 
 	return false;
 }
